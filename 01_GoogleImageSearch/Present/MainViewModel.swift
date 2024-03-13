@@ -11,7 +11,7 @@ import RxCocoa
 struct MainViewModel {
     // subView Models
     let searchBarViewModel = SearchBarViewModel()
-    
+    let collectionViewModel = ImageCollectionViewModel()
     // view Data
     //    let cellData: Driver<[GGimage]>
     
