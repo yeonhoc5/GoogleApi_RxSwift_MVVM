@@ -12,7 +12,7 @@ import RxCocoa
 
 class MainViewController: UIViewController {
     // subViews
-    let searchBar = UISearchBar()
+    let searchBar = SearchBarView()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     // rx
     let disposeBag = DisposeBag()
@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     }
     
     func bind(_ viewModel: MainViewModel) {
+        searchBar.bind(viewModel.searchBarViewModel)
     }
     
     private func attribute() {

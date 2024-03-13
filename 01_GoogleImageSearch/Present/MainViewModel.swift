@@ -9,7 +9,10 @@ import Foundation
 import RxCocoa
 
 struct MainViewModel {
+    // subView Models
+    let searchBarViewModel = SearchBarViewModel()
+    
     // view Data
-//    let cellData: Driver<[GGimage]>
+    //    let cellData: Driver<[GGimage]>
     
 }
