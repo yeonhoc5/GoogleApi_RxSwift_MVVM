@@ -11,6 +11,10 @@
 		1A39E5F62BA19B8D005B5742 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E5F52BA19B8D005B5742 /* SearchBarViewModel.swift */; };
 		1A39E5F92BA1ACAD005B5742 /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E5F82BA1ACAD005B5742 /* ImageCollectionView.swift */; };
 		1A39E5FB2BA1ACB2005B5742 /* ImageCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E5FA2BA1ACB2005B5742 /* ImageCollectionViewModel.swift */; };
+		1A39E62B2BA27F56005B5742 /* GoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E62A2BA27F56005B5742 /* GoogleAPI.swift */; };
+		1A39E62D2BA280F4005B5742 /* ApiKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A39E62C2BA280F4005B5742 /* ApiKeyInfo.plist */; };
+		1A39E62F2BA28191005B5742 /* ApiKeyBundel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E62E2BA28191005B5742 /* ApiKeyBundel.swift */; };
+		1A39E6312BA2838B005B5742 /* SearchNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E6302BA2838B005B5742 /* SearchNetwork.swift */; };
 		1A9697942B9E8825006C21B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697932B9E8825006C21B2 /* AppDelegate.swift */; };
 		1A9697962B9E8825006C21B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697952B9E8825006C21B2 /* SceneDelegate.swift */; };
 		1A9697982B9E8825006C21B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697972B9E8825006C21B2 /* MainViewController.swift */; };
@@ -30,6 +34,10 @@
 		1A39E5F52BA19B8D005B5742 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		1A39E5F82BA1ACAD005B5742 /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionView.swift; sourceTree = "<group>"; };
 		1A39E5FA2BA1ACB2005B5742 /* ImageCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModel.swift; sourceTree = "<group>"; };
+		1A39E62A2BA27F56005B5742 /* GoogleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPI.swift; sourceTree = "<group>"; };
+		1A39E62C2BA280F4005B5742 /* ApiKeyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeyInfo.plist; sourceTree = "<group>"; };
+		1A39E62E2BA28191005B5742 /* ApiKeyBundel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyBundel.swift; sourceTree = "<group>"; };
+		1A39E6302BA2838B005B5742 /* SearchNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetwork.swift; sourceTree = "<group>"; };
 		1A9697902B9E8825006C21B2 /* 01_GoogleImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01_GoogleImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9697932B9E8825006C21B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A9697952B9E8825006C21B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,17 @@
 			path = ListView;
 			sourceTree = "<group>";
 		};
+		1A39E6292BA27F02005B5742 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1A39E62C2BA280F4005B5742 /* ApiKeyInfo.plist */,
+				1A39E62E2BA28191005B5742 /* ApiKeyBundel.swift */,
+				1A39E62A2BA27F56005B5742 /* GoogleAPI.swift */,
+				1A39E6302BA2838B005B5742 /* SearchNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1A9697872B9E8825006C21B2 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +115,7 @@
 			children = (
 				1A9697932B9E8825006C21B2 /* AppDelegate.swift */,
 				1A9697952B9E8825006C21B2 /* SceneDelegate.swift */,
+				1A39E6292BA27F02005B5742 /* Network */,
 				1A9697EA2B9EB54F006C21B2 /* Entity */,
 				1A9697E92B9EB547006C21B2 /* Present */,
 				1A96979C2B9E8826006C21B2 /* Assets.xcassets */,
@@ -196,6 +216,7 @@
 			files = (
 				1A96979D2B9E8826006C21B2 /* Assets.xcassets in Resources */,
 				1A9697A02B9E8826006C21B2 /* Base in Resources */,
+				1A39E62D2BA280F4005B5742 /* ApiKeyInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +230,10 @@
 				1A9697982B9E8825006C21B2 /* MainViewController.swift in Sources */,
 				1A9697942B9E8825006C21B2 /* AppDelegate.swift in Sources */,
 				1A9697EC2B9EB588006C21B2 /* GGImageResults.swift in Sources */,
+				1A39E62B2BA27F56005B5742 /* GoogleAPI.swift in Sources */,
+				1A39E62F2BA28191005B5742 /* ApiKeyBundel.swift in Sources */,
 				1A39E5FB2BA1ACB2005B5742 /* ImageCollectionViewModel.swift in Sources */,
+				1A39E6312BA2838B005B5742 /* SearchNetwork.swift in Sources */,
 				1A9697962B9E8825006C21B2 /* SceneDelegate.swift in Sources */,
 				1A39E5F32BA19B77005B5742 /* SearchBarView.swift in Sources */,
 				1A9697A82B9E8935006C21B2 /* MainViewModel.swift in Sources */,

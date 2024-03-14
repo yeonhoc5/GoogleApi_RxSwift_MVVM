@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GGImageResults {
+struct GGImageResults: Codable {
     let searchResult: [GGimage]
     
     enum CodingKeys: String, CodingKey {
@@ -15,7 +15,7 @@ struct GGImageResults {
     }
 }
 
-struct GGimage {
+struct GGimage: Codable {
     let id: Int
     let thumbnail: String
     let title: String
