@@ -41,11 +41,14 @@ class MainViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.push
-            .emit { item in
+            .emit { [weak self] item in
+                guard let self = self else { return }
                 let detailVC = ImageDetailViewController()
                 let model = ImageDetailViewModel(item: item)
                 detailVC.bind(model)
-                self.show(detailVC, sender: nil)
+                
+                navigationController?.pushViewController(detailVC, animated: true)
+//                self.show(detailVC, sender: nil)
             }
             .disposed(by: disposeBag)
     }
