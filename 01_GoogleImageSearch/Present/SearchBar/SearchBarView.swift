@@ -7,10 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SearchBarView: UISearchBar {
     // sub View
     let btnSearch = UIButton()
+    // properties
+    let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,10 +27,28 @@ class SearchBarView: UISearchBar {
     }
     
     func bind(_ viewModel: SearchBarViewModel) {
+        Observable
+            .merge(
+                btnSearch.rx.tap.asObservable(),
+                self.rx.searchButtonClicked.asObservable()
+            )
+            .bind(to: viewModel.btnSearchTapped)
+            .disposed(by: disposeBag)
         
+        searchTextField.rx.text
+            .map { $0 ?? ""}
+            .filter { !$0.isEmpty }
+            .distinctUntilChanged()
+            .bind(to: viewModel.stringToSearch)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
+        // searchbar
+        self.barTintColor = .systemGray4
+        searchTextField.backgroundColor = .white
+        searchTextField.tintColor = .gray
+        // btnSearch
         btnSearch.setTitle("검색", for: .normal)
         btnSearch.setTitleColor(.systemTeal, for: .normal)
         btnSearch.setTitleColor(.lightGray, for: .highlighted)

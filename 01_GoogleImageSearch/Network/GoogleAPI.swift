@@ -10,7 +10,7 @@ import Foundation
 struct GoogleAPI {
     let schem = "https"
     let host = "serpapi.com"
-    let path = "search"
+    let path = "/search"
     
     func urlComponents(query: String) -> URLComponents {
         var components = URLComponents()
