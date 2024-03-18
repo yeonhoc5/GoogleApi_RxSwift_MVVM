@@ -39,7 +39,8 @@ struct MainViewModel {
                 guard case .success(let value) = data else {
                     return nil
                 }
-                return value.searchResult
+                let items = value.searchResult
+                return items.filter { $0.original.contains("jpg") }
             }
             .bind(to: collectionViewModel.cellData)
             .disposed(by: disposeBag)
