@@ -9,9 +9,9 @@ import Foundation
 
 extension Bundle {
     var google: String {
-        guard let file = self.path(forResource: "ApiKeyInfo", ofType: "plist") else { return "" }
-        guard let resource = NSDictionary(contentsOfFile: file) else { return "" }
-        guard let key = resource["Google"] as? String else {
+        guard let file = self.path(forResource: "ApiKeyInfo", ofType: "plist"),
+              let resource = NSDictionary(contentsOfFile: file),
+              let key = resource["Google"] as? String else {
             fatalError("api 키를 가져오지 못했습니다.")
         }
         return key
