@@ -16,6 +16,9 @@ struct MainViewModel {
     // properties
     let disposeBag = DisposeBag()
     let showProgressView: Driver<Bool>
+    // view Transfer property
+    let itemSelected = PublishRelay<GGimage>()
+    let push: Signal<GGimage>
     
     init(){
         let queryToSearch = searchBarViewModel.btnSearchTapped
@@ -41,17 +44,14 @@ struct MainViewModel {
             .bind(to: collectionViewModel.cellData)
             .disposed(by: disposeBag)
         
-        resultData
-            .subscribe { data in
-                print(data)
-            }
-        
         showProgressView = Observable
             .merge(queryToSearch.map { !$0.isEmpty },
                    resultData.map { _ in return false}
             )
             .asDriver(onErrorJustReturn: false)
         
+        push = itemSelected
+            .asSignal(onErrorSignalWith: .empty())
     }
     
 }

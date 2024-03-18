@@ -16,7 +16,9 @@
 		1A39E6312BA2838B005B5742 /* SearchNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39E6302BA2838B005B5742 /* SearchNetwork.swift */; };
 		1A8C3E042BA7CB4B00583AFB /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C3E032BA7CB4B00583AFB /* ImageViewCell.swift */; };
 		1A8C3E062BA7CB5100583AFB /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C3E052BA7CB5100583AFB /* ImageViewModel.swift */; };
-		1A8C3E092BA7D44700583AFB /* ApiKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C3E082BA7D44700583AFB /* ApiKeyInfo.plist */; };
+		1A8C3E0F2BA7EB0E00583AFB /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C3E0E2BA7EB0E00583AFB /* ImageDetailViewController.swift */; };
+		1A8C3E112BA7EB1300583AFB /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C3E102BA7EB1300583AFB /* ImageDetailViewModel.swift */; };
+		1A8C3E152BA7EB6900583AFB /* ApiKeyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C3E142BA7EB6900583AFB /* ApiKeyInfo.plist */; };
 		1A9697942B9E8825006C21B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697932B9E8825006C21B2 /* AppDelegate.swift */; };
 		1A9697962B9E8825006C21B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697952B9E8825006C21B2 /* SceneDelegate.swift */; };
 		1A9697982B9E8825006C21B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9697972B9E8825006C21B2 /* MainViewController.swift */; };
@@ -41,8 +43,10 @@
 		1A39E6302BA2838B005B5742 /* SearchNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetwork.swift; sourceTree = "<group>"; };
 		1A8C3E032BA7CB4B00583AFB /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		1A8C3E052BA7CB5100583AFB /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
-		1A8C3E082BA7D44700583AFB /* ApiKeyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeyInfo.plist; sourceTree = "<group>"; };
-		1A8C3E0A2BA7D46300583AFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8C3E0E2BA7EB0E00583AFB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDetailViewController.swift; path = 01_GoogleImageSearch/Present/ImageDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		1A8C3E102BA7EB1300583AFB /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		1A8C3E122BA7EB5F00583AFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8C3E142BA7EB6900583AFB /* ApiKeyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeyInfo.plist; sourceTree = "<group>"; };
 		1A9697902B9E8825006C21B2 /* 01_GoogleImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01_GoogleImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9697932B9E8825006C21B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A9697952B9E8825006C21B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		1A39E6292BA27F02005B5742 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1A8C3E082BA7D44700583AFB /* ApiKeyInfo.plist */,
+				1A8C3E142BA7EB6900583AFB /* ApiKeyInfo.plist */,
 				1A39E62E2BA28191005B5742 /* ApiKeyBundel.swift */,
 				1A39E62A2BA27F56005B5742 /* GoogleAPI.swift */,
 				1A39E6302BA2838B005B5742 /* SearchNetwork.swift */,
@@ -106,6 +110,26 @@
 				1A8C3E052BA7CB5100583AFB /* ImageViewModel.swift */,
 			);
 			path = ImageCellView;
+			sourceTree = "<group>";
+		};
+		1A8C3E0C2BA7EAEF00583AFB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				1A9697972B9E8825006C21B2 /* MainViewController.swift */,
+				1A9697A72B9E8935006C21B2 /* MainViewModel.swift */,
+				1A39E5F42BA19B7B005B5742 /* SearchBar */,
+				1A39E5F72BA1AC8B005B5742 /* ListView */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		1A8C3E0D2BA7EAF500583AFB /* ImageDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				1A8C3E0E2BA7EB0E00583AFB /* ImageDetailViewController.swift */,
+				1A8C3E102BA7EB1300583AFB /* ImageDetailViewModel.swift */,
+			);
+			path = ImageDetailView;
 			sourceTree = "<group>";
 		};
 		1A9697872B9E8825006C21B2 = {
@@ -134,7 +158,7 @@
 				1A9697E92B9EB547006C21B2 /* Present */,
 				1A96979C2B9E8826006C21B2 /* Assets.xcassets */,
 				1A96979E2B9E8826006C21B2 /* LaunchScreen.storyboard */,
-				1A8C3E0A2BA7D46300583AFB /* Info.plist */,
+				1A8C3E122BA7EB5F00583AFB /* Info.plist */,
 			);
 			path = 01_GoogleImageSearch;
 			sourceTree = "<group>";
@@ -142,10 +166,8 @@
 		1A9697E92B9EB547006C21B2 /* Present */ = {
 			isa = PBXGroup;
 			children = (
-				1A9697972B9E8825006C21B2 /* MainViewController.swift */,
-				1A9697A72B9E8935006C21B2 /* MainViewModel.swift */,
-				1A39E5F42BA19B7B005B5742 /* SearchBar */,
-				1A39E5F72BA1AC8B005B5742 /* ListView */,
+				1A8C3E0C2BA7EAEF00583AFB /* MainView */,
+				1A8C3E0D2BA7EAF500583AFB /* ImageDetailView */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -229,8 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A96979D2B9E8826006C21B2 /* Assets.xcassets in Resources */,
+				1A8C3E152BA7EB6900583AFB /* ApiKeyInfo.plist in Resources */,
 				1A9697A02B9E8826006C21B2 /* Base in Resources */,
-				1A8C3E092BA7D44700583AFB /* ApiKeyInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +267,10 @@
 				1A9697982B9E8825006C21B2 /* MainViewController.swift in Sources */,
 				1A9697942B9E8825006C21B2 /* AppDelegate.swift in Sources */,
 				1A8C3E042BA7CB4B00583AFB /* ImageViewCell.swift in Sources */,
+				1A8C3E0F2BA7EB0E00583AFB /* ImageDetailViewController.swift in Sources */,
 				1A9697EC2B9EB588006C21B2 /* GGImageResults.swift in Sources */,
 				1A39E62B2BA27F56005B5742 /* GoogleAPI.swift in Sources */,
+				1A8C3E112BA7EB1300583AFB /* ImageDetailViewModel.swift in Sources */,
 				1A39E62F2BA28191005B5742 /* ApiKeyBundel.swift in Sources */,
 				1A39E5FB2BA1ACB2005B5742 /* ImageCollectionViewModel.swift in Sources */,
 				1A39E6312BA2838B005B5742 /* SearchNetwork.swift in Sources */,
