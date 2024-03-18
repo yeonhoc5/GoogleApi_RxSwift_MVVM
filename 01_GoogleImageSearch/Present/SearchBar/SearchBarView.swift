@@ -41,6 +41,11 @@ class SearchBarView: UISearchBar {
             .distinctUntilChanged()
             .bind(to: viewModel.stringToSearch)
             .disposed(by: disposeBag)
+        
+        viewModel.btnSearchTapped
+            .bind(to: self.rx.endEditing)
+            .disposed(by: disposeBag)
+            
     }
     
     private func attribute() {
@@ -63,6 +68,15 @@ class SearchBarView: UISearchBar {
             $0.leading.equalTo(searchTextField.snp.trailing).offset(10)
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(20)
+        }
+    }
+}
+
+
+extension Reactive where Base: SearchBarView {
+    var endEditing: Binder<Void> {
+        return Binder(base) { base, _ in
+            base.endEditing(true)
         }
     }
 }
