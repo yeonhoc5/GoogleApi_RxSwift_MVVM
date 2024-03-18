@@ -30,6 +30,24 @@ class MainViewController: UIViewController {
         viewModel.showProgressView
             .drive(progressView.rx.isAnimating)
             .disposed(by: disposeBag)
+        
+        Observable
+            .combineLatest(
+                collectionView.rx.itemSelected,
+                viewModel.collectionViewModel.cellData) { indexPath, items in
+                    items[indexPath.row]
+                }
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        viewModel.push
+            .emit { item in
+                let detailVC = ImageDetailViewController()
+                let model = ImageDetailViewModel(item: item)
+                detailVC.bind(model)
+                self.show(detailVC, sender: nil)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
