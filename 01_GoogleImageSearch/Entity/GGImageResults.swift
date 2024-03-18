@@ -22,4 +22,11 @@ struct GGimage: Codable {
     let original: String
     let originalWidth: Int
     let originalHeight: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "position"
+        case originalWidth = "original_width"
+        case originalHeight = "original_height"
+        case thumbnail, title, original
+    }
 }

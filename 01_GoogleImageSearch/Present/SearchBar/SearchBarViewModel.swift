@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 struct SearchBarViewModel {
-    
+    let btnSearchTapped = PublishRelay<Void>()
+    let stringToSearch = PublishSubject<String?>()
 }
