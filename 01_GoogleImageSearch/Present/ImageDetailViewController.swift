@@ -31,7 +31,7 @@ class ImageDetailViewController: UIViewController {
     
     func bind(_ viewModel: ImageDetailViewModel) {
         viewModel.percentage
-            .map { Float($0 ?? 1.0) }
+            .map { $0 ?? 1.0 }
             .asDriver(onErrorJustReturn: 1.0)
             .drive(progressView.rx.progress)
             .disposed(by: disposeBag)
@@ -61,11 +61,18 @@ class ImageDetailViewController: UIViewController {
             
             let received = Observable.just(receivedSize)
             let total = Observable.just(totalSize)
+            
             Observable
-                .combineLatest(received, total) { Float($0 / $1) }
+                .combineLatest(received, total) { Float($0) / Float($1) }
                 .bind(to: viewModel.percentage)
                 .disposed(by: self.disposeBag)
-        })
+            
+        }) { result in
+            Observable<Float>.just(1.0)
+                .bind(to: viewModel.percentage)
+                .disposed(by: self.disposeBag)
+                
+        }
     }
     
     private func attribute() {
