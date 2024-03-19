@@ -46,9 +46,7 @@ class MainViewController: UIViewController {
                 let detailVC = ImageDetailViewController()
                 let model = ImageDetailViewModel(item: item)
                 detailVC.bind(model)
-                
                 navigationController?.pushViewController(detailVC, animated: true)
-//                self.show(detailVC, sender: nil)
             }
             .disposed(by: disposeBag)
     }

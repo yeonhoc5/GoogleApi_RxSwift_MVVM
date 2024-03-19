@@ -13,14 +13,15 @@ struct ImageDetailViewModel {
     let item: GGimage
     let percentage = PublishRelay<Float?>()
     let hideProgressView: Driver<Bool>
+    let loadImageCompleted = PublishRelay<Bool>()
     
     init(item: GGimage) {
         self.item = item
-        
         hideProgressView = percentage
-            .map { $0 == 1 }
+            .map { $0 == 1.0 }
             .delay(.seconds(1), scheduler: MainScheduler.instance)
             .startWith(false)
             .asDriver(onErrorJustReturn: true)
+
     }
 }
