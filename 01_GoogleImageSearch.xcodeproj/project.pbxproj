@@ -43,7 +43,7 @@
 		1A39E6302BA2838B005B5742 /* SearchNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetwork.swift; sourceTree = "<group>"; };
 		1A8C3E032BA7CB4B00583AFB /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		1A8C3E052BA7CB5100583AFB /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
-		1A8C3E0E2BA7EB0E00583AFB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDetailViewController.swift; path = 01_GoogleImageSearch/Present/ImageDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		1A8C3E0E2BA7EB0E00583AFB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDetailViewController.swift; path = 01_GoogleImageSearch/Present/ImageDetailView/ImageDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		1A8C3E102BA7EB1300583AFB /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 		1A8C3E122BA7EB5F00583AFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8C3E142BA7EB6900583AFB /* ApiKeyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeyInfo.plist; sourceTree = "<group>"; };
